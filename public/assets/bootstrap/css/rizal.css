@@ -1,0 +1,305 @@
+/* ==========================================================================
+   rizal.css — Sistem Manajemen Stok Kelontong
+   by Rizal Amin Bakir —> Tidak Semua Hati itu Sayang💀
+   ========================================================================== */
+
+/* BODY: background foto toko dengan overlay hijau */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background:
+        linear-gradient(135deg, rgba(255,255,255,0.82), rgba(20, 90, 50, 0.75)),
+        url('../../images/toko.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* area konten utama transparan agar foto toko tembus */
+.content,
+main,
+.main-content {
+    background: transparent !important;
+}
+
+/* ==========================================================================
+   SIDEBAR NYA REKKSS
+   ========================================================================== */
+.sidebar {
+    background: #1e293b;
+    box-shadow: 3px 0 15px rgba(0,0,0,0.18);
+    min-height: calc(100vh - 56px);
+}
+
+.sidebar .nav-link {
+    color: rgba(255,255,255,0.72);
+    padding: 10px 14px;
+    margin-bottom: 3px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: all 0.18s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: #ffffff;
+    padding-left: 20px;
+}
+
+.sidebar .nav-link.active-menu {
+    background-color: #198754;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sidebar hr {
+    border-color: rgba(255,255,255,0.12);
+}
+
+/* ==========================================================================
+   NAVBAR OMAGA
+   ========================================================================== */
+.navbar.bg-success {
+    background-color: #145a32 !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* ==========================================================================
+   CARD — mengapung di atas background foto AWWW
+   ========================================================================== */
+.card {
+    border: none !important;
+    border-radius: 12px !important;
+    background: rgba(255,255,255,0.97) !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+}
+
+.card-header {
+    border-radius: 12px 12px 0 0 !important;
+    font-size: 0.9rem;
+    padding: 0.8rem 1.25rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}
+
+/* Override khusus card-header danger -> jadi amber/oranye */
+.card-header.bg-danger {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+/* ==========================================================================
+   KARTU DASHBOARD (stat cards nyo)
+   ========================================================================== */
+.card-dashboard {
+    border-radius: 12px !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-dashboard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+
+/* ==========================================================================
+   TABEL LE
+   ========================================================================== */
+.table thead th {
+    background-color: #f1f5f9;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    border-bottom: 2px solid #e2e8f0 !important;
+    padding: 0.85rem 1rem;
+}
+
+.table tbody td {
+    vertical-align: middle;
+    padding: 0.72rem 1rem;
+    font-size: 0.875rem;
+    color: #334155;
+    border-color: #f1f5f9;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f0fdf4 !important;
+}
+
+/* highlight baris stok kritis */
+.table tbody tr:has(.badge.bg-danger) {
+    background-color: #fff5f5;
+}
+
+/* ==========================================================================
+   EL BADGE
+   ========================================================================== */
+.badge {
+    font-size: 0.75rem;
+    padding: 0.35em 0.65em;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   PAGINATION — ini ini penting dong wokk
+   ========================================================================== */
+.pagination {
+    gap: 3px;
+    margin-bottom: 0;
+}
+
+.page-link {
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+    color: #198754 !important;
+    font-size: 0.85rem;
+    padding: 0.42rem 0.8rem;
+    font-weight: 500;
+    background-color: rgba(255,255,255,0.9) !important;
+    transition: all 0.15s;
+    line-height: 1.5;
+}
+
+.page-link:hover {
+    background-color: #d1fae5 !important;
+    border-color: #6ee7b7 !important;
+    color: #065f46 !important;
+}
+
+.page-item.active .page-link {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+    color: #fff !important;
+    box-shadow: 0 2px 8px rgba(25,135,84,0.4);
+}
+
+.page-item.disabled .page-link {
+    color: #94a3b8 !important;
+    background-color: rgba(248,250,252,0.8) !important;
+    border-color: #e2e8f0 !important;
+}
+
+/* ==========================================================================
+   FORM NYA
+   ========================================================================== */
+.form-control,
+.form-select {
+    border-radius: 8px;
+    font-size: 0.875rem;
+    border-color: #e2e8f0;
+    background-color: rgba(255,255,255,0.95);
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.2rem rgba(25,135,84,0.15);
+    background-color: #fff;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.35rem;
+}
+
+/* ==========================================================================
+   TOMBOL ATO BUTTON
+   ========================================================================== */
+.btn {
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.15s;
+}
+
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.btn-success:hover {
+    background-color: #146c43;
+    border-color: #146c43;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(25,135,84,0.3);
+}
+
+.btn-sm {
+    padding: 0.28rem 0.6rem;
+    font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   ALERT / PERINGATAN AAAAAAA
+   ========================================================================== */
+.alert {
+    border-radius: 10px;
+    font-size: 0.875rem;
+    border: none;
+}
+
+.alert-success {
+    background-color: rgba(209,237,221,0.95);
+    color: #0a3622;
+}
+
+.alert-danger {
+    background-color: rgba(254,243,199,0.95);
+    color: #92400e;
+    border: 1px solid #fde68a !important;
+}
+
+/* ==========================================================================
+   KODE BARANG tag <code> gitu
+   ========================================================================== */
+code {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 0.15em 0.5em;
+    border-radius: 5px;
+    font-size: 0.82em;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   EMPTY STATE (tabel kosong nya)
+   ========================================================================== */
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #94a3b8;
+}
+
+.empty-state .empty-icon {
+    font-size: 2.8rem;
+    margin-bottom: 0.75rem;
+    opacity: 0.45;
+}
+
+/* ==========================================================================
+   CARD FOOTER (area pagination ne)
+   ========================================================================== */
+.card-footer {
+    background: rgba(248,250,252,0.8) !important;
+    border-top: 1px solid #f1f5f9 !important;
+    border-radius: 0 0 12px 12px !important;
+    padding: 0.75rem 1.25rem;
+}
+
+/* ==========================================================================
+   TABLE RESPONSIVE agar tidak ngerusak layoutnya
+   ========================================================================== */
+.table-responsive {
+    border-radius: 12px 12px 0 0;
+    overflow-x: auto;
+}
